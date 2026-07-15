@@ -21,7 +21,7 @@ Contoso Coffee は新しい Dynamics 365 Sales 環境を作成したばかりで
 
 このラボでは 2 つの管理ポータルも使用します。 始める前に、次のそれぞれを別のブラウザー タブで開いてください。
 
-- **Microsoft 365 管理センター** (`https://admin.microsoft.com`): ユーザーの作成とライセンスの割り当てに使用
+- **Microsoft 365 管理センター** (`https://admin.cloud.microsoft/`): ユーザーの作成とライセンスの割り当てに使用
 - **Power Platform 管理センター** (`https://admin.powerplatform.microsoft.com`): 環境の設定とデータ管理に使用
 
 この両方に、ラボ 00 で使用したのと同じ資格情報でサインインしてください。
@@ -30,7 +30,7 @@ Contoso Coffee は新しい Dynamics 365 Sales 環境を作成したばかりで
 
 担当地域を構成する前に、Contoso Coffee の地域営業マネージャーと営業担当者のユーザー アカウントを用意する必要があります。 5 人のユーザーを Microsoft 365 管理センターで作成し、それぞれに Dynamics 365 Sales のライセンスを割り当ててから、Dynamics 365 Sales でのセキュリティ ロールを割り当てます。
 
-1. 新しいブラウザー タブを開いて (まだ開いていない場合)、`https://admin.microsoft.com` に移動します。
+1. 新しいブラウザー タブを開いて (まだ開いていない場合)、`https://admin.cloud.microsoft/` に移動します。
 
 1. 左側のナビゲーション バーで **[ユーザー]** を選択し、**[アクティブなユーザー]** を選択します。
 
@@ -46,20 +46,23 @@ Contoso Coffee は新しい Dynamics 365 Sales 環境を作成したばかりで
    - **パスワードを自動生成する**: オン。 新しいユーザーの一時的なパスワードが自動的に生成されます。
    - **初回サインイン時にこのユーザーにパスワードの変更を要求する**: オン。 ユーザーは初回サインイン時に自分でパスワードを設定する必要があります。
 
-    > **注**: 本番環境では、パスワード自動作成をオフにしてパスワードを自分で設定することもできます。このようにしない場合は、生成されたパスワードを安全な方法で新しいユーザーに伝える必要があります。
+   > [!NOTE]
+   > 運用環境では、パスワード自動作成をオフにしてパスワードを自分で設定することもできます。このようにしない場合は、生成されたパスワードを安全な方法で新しいユーザーに伝える必要があります。
 
-1. **[製品ライセンスの割り当て]** ページで、自分の国または地域を選択してから、**[Dynamics 365 Sales]** を選択してライセンスを割り当てます。
+1. [**次へ**] を選択します。
+
+1. **[製品ライセンスの割り当て]** ページの **[場所の選択]** で、場所を選択してから、**[Dynamics 365 Sales Premium Viral Trial]** のチェックボックスを選択してライセンスを割り当てます。
 
 1. **[次へ]** を選択し、もう一度 **[次へ]** を選択してオプションの設定をスキップし、**[追加の完了]** を選択し、次に **[閉じる]** を選択します。
 
-1. ステップ 3 から 7 までを繰り返して、次に示す 4 人のユーザーを作成し、それぞれに **Dynamics 365 Sales** のライセンスを割り当てます。
+1. ステップ 3 から 8 までを繰り返して、次に示す 4 人のユーザーを作成し、それぞれに **Dynamics 365 Sales** のライセンスを割り当てます。
 
-   | 名 | 姓 | ユーザー名 |
-   |------------|-----------|----------|
-   | Maria | Reyes | mariareyes |
-   | David | Osei | davidosei |
-   | Rachel | Sato | rachelsato |
-   | ヨルダン | Park | jordanpark |
+   | 名 | 姓 | [表示名] | ユーザー名|
+   |------------|-----------|-------------|-------------|
+   | Maria | Reyes | Maria Reyes | mariareyes |
+   | David | Osei | David Osei | davidosei |
+   | Rachel | Sato | Rachel Sato | rachelsato |
+   | ヨルダン | Park | Jordan Park | jordanpark |
 
 1. 5 人のユーザー全員が **[アクティブなユーザー]** のリストに表示されていることを確認します。
 
@@ -71,9 +74,9 @@ Contoso Coffee は新しい Dynamics 365 Sales 環境を作成したばかりで
 
 1. 左側のナビゲーションで、**[管理]** を選んでから、**[環境]** を選びます。
 
-1. 自分の Dynamics 365 **Sales 試用**環境をリストから選択します。
+1. 自分の Dynamics 365 **Sales Trial** 環境をリストから選択します。
 
-1. 環境の詳細ページの上部にある **[設定]** を選択します。
+1. コマンド バーで、**設定**を選択します。
 
 1. **[ユーザーとアクセス許可]** セクションを展開して **[ユーザー]** を選択します。
 
@@ -81,17 +84,18 @@ Contoso Coffee は新しい Dynamics 365 Sales 環境を作成したばかりで
 
 1. 検索ボックスに「`Andy Kim`」と入力し、このユーザーを結果から選択します。
 
-    > **注**: 作成されたばかりのユーザーが Microsoft 365 から Dynamics 365 に同期されるのに数分かかる場合があります。 ユーザーがまだ表示されない場合は、少し待ってからページを最新の情報に更新してください。
+   > [!NOTE]
+   > 作成されたばかりのユーザーが Microsoft 365 から Dynamics 365 に同期されるのに数分かかる場合があります。 ユーザーがまだ表示されない場合は、少し待ってからページを最新の情報に更新してください。
 
 1. **[追加]** を選択します。
 
 1. **[セキュリティ ロールの管理]** ペインで、**[営業マネージャー]** というセキュリティ ロールを選択します。
 
-1. **[保存]** を選択してから、**[保存]** をもう一度選択して確定します。
+1. **[保存]** を選択してから、**[保存]** をもう一度選択してロールの割り当てを確認します。
 
-1. ステップ 2 から 5 までを繰り返して **Maria Reyes**、**David Osei**、**Rachel Sato** を追加し、それぞれに**営業マネージャー**というロールを割り当てます。
+1. ステップ 6 から 10 までを繰り返して **Maria Reyes**、**David Osei**、**Rachel Sato** を追加し、それぞれに**営業マネージャー**というロールを割り当てます。
 
-1. ステップ 2 から 5 までを繰り返して **Jordan Park** を追加し、**営業担当者**というロールを割り当てます。
+1. ステップ 6 から 10 までを繰り返して **Jordan Park** を追加し、**営業担当者**というロールを割り当てます。
 
 これで Contoso の一連のユーザーがそろい、ラボの中で割り当てができる状態になりました。
 
@@ -99,9 +103,9 @@ Contoso Coffee は新しい Dynamics 365 Sales 環境を作成したばかりで
 
 Contoso の営業チームは 4 つの地域に分かれています。 ここでは、Dynamics 365 Sales でそれぞれを表す担当地域を作成します。
 
-1. "営業ハブ" の左側ナビゲーションの下部にある **[アプリの設定]** を選択します。
+1. **[営業ハブ]** に移動し、左側のナビゲーションの下部にある **[アプリ設定]** を選択します。
 
-1. **[アプリの設定]** エリアで、**[営業管理]** セクションまで下にスクロールして **[営業担当地域]** を選択します。
+1. **[アプリ設定]** エリアで **[すべての設定を表示]** を選択し、**[営業管理]** セクションを展開してから **[販売区域]** を選択します。
 
 1. 最初の担当地域を作成するために、コマンド バーの **[+ 新規]** を選択します。
 
@@ -109,15 +113,15 @@ Contoso の営業チームは 4 つの地域に分かれています。 ここ�
 
 1. **[マネージャー]** フィールドで、**Andy Kim** を検索して選択します。
 
-1. コマンド バーの **[保存して閉じる]** を選択します。
+1. コマンド バーで **[保存して閉じる]** を選択します。
 
-1. ステップ 3 から 7 までを繰り返して、さらに 3 つの担当地域を作成し、次に示すとおりにマネージャーを割り当てます。
+1. ステップ 3 から 6 までを繰り返して、さらに 3 つの担当地域を作成し、次に示すとおりにマネージャーを割り当てます。
 
    | 担当地域 | 管理者 |
    |-----------|---------|
-   | `Southeast` | Maria Reyes |
-   | `Central` | David Osei |
-   | `West` | Rachel Sato |
+   | Southeast | Maria Reyes |
+   | Central | David Osei |
+   | 西部 | Rachel Sato |
 
 1. 4 つの担当地域、つまり **Northeast**、**Southeast**、**Central**、**West** のすべてがリストに含まれていることを確認します。
 
@@ -131,23 +135,24 @@ Contoso の要望として、すべてのレコードに一貫性があり認識
 
 1. 左側のナビゲーションで、**[管理]** を選択し、次に **[環境]** を選択します。
 
-1. 自分の Dynamics 365 **Sales 試用**環境をリストから選択します。
+1. 自分の Dynamics 365 **Sales Trial** 環境をリストから選択します。
 
-1. 環境の詳細ページの上部にある **[設定]** を選択します。
+1. コマンド バーで、**設定**を選択します。
 
 1. **[データ管理]** セクションを展開し、**[自動付番]** を選択します。
 
 1. 自動付番の設定画面で、**[見積もり]** の行を見つけます。
 
-1. **[プレフィックス]** の値を `CCQ` (Contoso Coffee Quote) に変更します。
+1. **[プレフィックス]** の値を **[CCQ]** (Contoso Coffee Quote) に変更します。
 
-1. **[サフィックスの長さ]** が `6` に設定されていることを確認します。 
+1. **[サフィックスの長さ]** が **[6]** に設定されていることを確認します。
 
-1. **[注文]** の行を見つけて、**[プレフィックス]** を `CCO` (Contoso Coffee Order) に変更します。
+1. **[注文]** の行を見つけて、**[プレフィックス]** を **[CCO]** (Contoso Coffee Order) に変更します。
 
 1. **保存**を選択して、変更を適用します。
 
-    > **注**: 自動付番の変更が適用されるのは新しいレコードのみです。 既存のレコードの番号は元のままになります。
+  > [!NOTE]
+  > 自動付番の変更が適用されるのは新しいレコードのみです。 既存のレコードの番号は元のままになります。
 
 <!--
 ## Task 5: Set up duplicate detection for leads
@@ -160,7 +165,7 @@ In this task, you'll create a rule that flags two leads as potential duplicates 
 
 1. In the environment settings, expand the **Data management** section and select **Duplicate detection rules**.
 
-1. Select **+New** on the command bar.
+1. Select **+ New** on the command bar.
 
 1. Fill in the rule details:
    - **Name**: `Duplicate leads by company name`
@@ -172,7 +177,8 @@ In this task, you'll create a rule that flags two leads as potential duplicates 
 
 1. From the **Field** dropdown, select **Company Name**.
 
-    > **Note**: You may notice an **Account** field on lead records as well. Account is a lookup that links to an existing Account record, but most inbound leads arrive before any Account exists, so that field is usually empty. **Company Name** is the plain-text field where the company name is captured at the point of entry, making it the right choice for catching duplicates from web forms, trade show scans, and CSV imports.
+    > [!NOTE]
+    > You may notice an **Account** field on lead records as well. Account is a lookup that links to an existing Account record, but most inbound leads arrive before any Account exists, so that field is usually empty. **Company Name** is the plain-text field where the company name is captured at the point of entry, making it the right choice for catching duplicates from web forms, trade show scans, and CSV imports.
 
 1. Set **Criteria** to **Same first characters**, and set the **Number of characters** to `5`.
 
@@ -180,7 +186,8 @@ In this task, you'll create a rule that flags two leads as potential duplicates 
 
 1. On the rules list, find your new rule and select **Publish** to activate it. Select **OK** to confirm.
 
-    > **Note**: Duplicate detection rules only run when a user saves a record or during data imports. They don't retroactively flag existing records.
+    > [!NOTE]
+    > Duplicate detection rules only run when a user saves a record or during data imports. They don't retroactively flag existing records.
 -->
 
 ## タスク 6: Copilot レコード要約を構成する
@@ -195,20 +202,22 @@ Dynamics 365 Sales での時間短縮に役立つ機能として、営業担当�
 
 1. **設定**タブを選択します。
 
-1. **[すべてのアプリ]** の下のトグルが **[オン]** に設定されていることを確認します。 **[カスタム]** に設定されている場合は、**[オン]** に変更します。
+1. **[すべてのアプリ]** の下のドロップダウン リストが **[オン]** に設定されていることを確認します。 **[カスタム]** に設定されている場合は、**[オン]** に変更します。
 
-    > **注**: 既定値は環境によって異なる場合があります。 **[オン]** に設定すると、Copilot の機能をその環境内のすべてのアプリで利用できるようになります。
+   > [!NOTE]
+   > 既定値は環境によって異なる場合があります。 **[オン]** に設定すると、Copilot の機能をその環境内のすべてのアプリで利用できるようになります。
 
 1. **[保存]** を選択します。
 
 1. **[リード]** タブを選択します。
 
-1. リードの要約に含まれる既定のフィールドを確認します。 **[トピック]**、**[リード ソース]**、**[評価]** などのフィールドがあるはずです。
+1. リードの要約に含まれる既定のフィールドを確認します。 **[トピック]**、**[リードのソース]** などのフィールドがあるはずです。
 
 1. **[+ フィールドの追加]** を選択して、次に示すフィールドを要約に追加します。
    - **会社名**
    - **売上高**
    - **従業員数**
+   - **Rating**
 
     これらのフィールドがあれば、担当者は個々のタブを開かなくてもリードの規模と見通しをすばやく判断できるようになります。
 
@@ -224,7 +233,8 @@ Dynamics 365 Sales での時間短縮に役立つ機能として、営業担当�
 
 1. **[保存]** を選択します。
 
-    > **注**: Copilot 要約に関する変更は、新しいセッションに対して即座に有効になります。 営業担当者がサインイン済みの場合は、ブラウザーを最新の情報に更新することが必要になる可能性があります。
+  > [!NOTE]
+  > Copilot 要約に関する変更は、新しいセッションに対して即座に有効になります。 営業担当者がサインイン済みの場合は、ブラウザーを最新の情報に更新することが必要になる可能性があります。
 
 ## タスク 7: 構成を確認する
 
@@ -234,19 +244,19 @@ Dynamics 365 Sales での時間短縮に役立つ機能として、営業担当�
 
 1. 左側のナビゲーションの **[リード]** を選択します。
 
-1. コマンド バーの **[+ 新規]** を選択します。
+1. コマンド バーで、**+新規**を選択します。
 
 1. 最初のテスト リードの詳細情報を、次のとおりに入力します。
-   - **トピック**: `Test Lead - Verify Config`
-   - **First Name:** `Alex`
-   - **Last Name:** `Rivera`
-   - **会社**: `Northwind Trading`
+   - **[トピック]**: リードのテスト - 構成の検証
+   - **[名]**: Alex
+   - **[姓]**: Rivera
+   - **[会社]**: Northwind Trading
 
 1. リード レコードの **[詳細]** タブを選択します。
 
 1. 次の値を入力します。
-   - **年間収益**: `500000`
-   - **従業員数**: `50`
+   - **[年間収益]**: 500,000
+   - **[従業員数]**: 50
 
 1. コマンド バーで、 **保存** を選択します。
 

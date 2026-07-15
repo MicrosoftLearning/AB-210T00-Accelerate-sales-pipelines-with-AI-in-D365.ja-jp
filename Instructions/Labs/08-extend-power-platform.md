@@ -31,9 +31,11 @@ Contoso Coffee のセールス オペレーション マネージャーである
 
 1. 新しいブラウザー タブを開いて、`https://make.powerautomate.com` に移動します。
 
+1. **[Sales Trial]** 環境にいることを確認します。 そうでない場合は、右上の環境のピッカーを選択し、**[Sales Trial]** に切り替えます。
+
 1. ラボの資格情報でサインインします。
 
-1. 左側のナビゲーションで **[作成]** を選択します。
+1. 左側のナビゲーションで **[+ 作成]** を選択します。
 
 1. **[自動クラウド フロー]** を選択します。
 
@@ -44,30 +46,30 @@ Contoso Coffee のセールス オペレーション マネージャーである
 1. **［作成］** を選択します
 
 1. トリガー カードで、次のように構成します。
-   - **種類の変更**: **追加**
-   - **テーブル名**: **営業案件**
-   - **スコープ**: **組織**
+   - **種類の変更**: 追加
+   - **[テーブル名]**: 営業案件
+   - **スコープ**: 組織
 
 1. トリガー カードの下にある **[+]** を選択して、条件を追加します。
 
-1. **[条件]** (コントロール) を検索して選択します。
+1. **[管理]** セクションから **[条件]** を検索して選択します。
 
-1. 条件で次のようにします。
-   - **値 (左側)**: 動的コンテンツを使用するために稲妻アイコンを選択し、**[推定収益]** を選びます。
-   - **演算子**: **次の値より大きい**
-   - **値 (右側)**: `50000`
+1. [条件] で、次のように構成します。
+   - **[値 (左側)]**: 動的コンテンツを使用するために稲妻アイコンを選択し、**[推定収益]** を選択します
+   - **[演算子]**: が次の値より大きい
+   - **[値 (右側)]**: 50,000
 
 1. **[True]** 分岐 (条件が true の場合) で、**[+]** を選択してアクションを追加します。
 
-1. **Office 365 Outlook** コネクタから **[メールの送信 (V2)]** を検索して選択します。 (サインインを求められる場合があります。**[サインイン]** を選択し、画面の指示に従って資格情報でサインインします)。
+1. **Office 365 Outlook** コネクタから **[メールの送信 (V2)]** を検索して選択します。 (サインインを求められた場合は、**[サインイン]** を選択し、プロンプトに従って資格情報でサインインします。)
 
 1. メールの詳細を入力します。
     - **宛先**: ラボ ユーザーのメール アドレスを入力します (通知を受け取る Marcus をシミュレートするため)。 これは MOD から始まる可能性があるため、MOD の入力を開始し、表示されたら選択できます。
-    - **件名**: `High-value opportunity created: [Topic]`
+    - **[件名]**: 高価値の営業案件が作成されました: [トピック]
     
-      営業案件名を動的に挿入するには、フィールドを選択し、動的コンテンツを追加します。**トピック**。
+      営業案件名を動的に挿入するには、**[件名]** フィールドの **[高価値の営業案件が作成されました:]** の後にカーソルを置き、**[動的なコンテンツの追加]** を選択し、**[トピック]** を検索して選択します。
 
-    - **本文は次のようになります。** 
+    - **本文は次のようになります。**
       ```
       Hi Marcus,
 
@@ -94,22 +96,23 @@ Contoso Coffee のセールス オペレーション マネージャーである
 
    Power Automate では、フローがリッスン モードになり、トリガー アクションを実行するように指示するメッセージが表示されます。
 
-1. [営業ハブ] ブラウザー タブに切り替え、左側のナビゲーションで **[営業案件]** を選び、**[+ 新規]** を選択します。
+1. [営業ハブ] ブラウザー タブに切り替え、**[営業]** エリアの左側のナビゲーションで **[営業案件]** を選択し、**[+ 新規]** を選択します。
 
 1. 次のフィールドに入力します。
-   - **トピック**: `Test - High-Value Flow Trigger`
-   - **推定収益**: `75000` (このフィールドはヘッダーにあります)
+   - **[トピック]**: テスト - 高価値フロー トリガー
+   - **[推定収益]**: 75,000 (このフィールドはヘッダーにあります)
    - **終了予定日**: 任意の将来の日付 (これもヘッダーにあります)
 
 1. 営業案件レコードで **[保存]** を選択します。
 
 1. [Power Automate] タブに戻ります。フローで新しいレコードが検出され、自動的に実行が開始されます。 各ステップに注意してください。正常に完了すると、各カードに緑色のチェックマークが表示されます。
 
-1. 実行が完了したら、**[完了]** を選択し、[Power Automate] タブを閉じます。
+1. 実行が完了したら、[Power Automate] タブを閉じます。
 
-1. 新しいブラウザー タブを開き、`https://outlook.office.com` に移動して、件名 `High-value opportunity created:` の後に営業案件名が記載されたメールを受信したことを確認します。
+1. 新しいブラウザー タブを開き、`https://outlook.office.com` に移動して、件名 **[高価値の営業案件が作成されました:]** の後に営業案件名が記載されたメールを受信したことを確認します。
 
-    > **注**: いずれかのステップで赤い X が表示されている場合は、それを選択してエラーの詳細を展開します。 よくある問題は Outlook 接続がないことです。アクション カードで **[サインイン]** を選択して再接続してください。
+   > [!NOTE]
+   > いずれかのステップで赤い X が表示されている場合は、それを選択してエラーの詳細を展開します。 よくある問題は Outlook 接続がないことです。アクション カードで **[サインイン]** を選択して再接続してください。
 
 ## タスク 3: 営業コーチング用に Copilot Studio エージェントを構成する
 
@@ -121,11 +124,13 @@ Marcus は毎週、次のような販売者からの同じ質問に答えます�
 
 1. ラボの資格情報でサインインします。
 
+1. **[Sales Trial]** 環境にいることを確認します。 そうでない場合は、右上の環境のピッカーを選択し、**[Sales Trial]** に切り替えます。
+
 1. **[ホーム]** ページで、**[最初からビルドを開始]** の下にある **[エージェント]** を選択します。
 
-1. エージェントに `Contoso Sales Coach` という名前を付け、**[作成]** を選択します。
+1. エージェントに「**Contoso Sales Coach**」という名前を付け、**[作成]** を選択します。
 
-1. **[指示]** セクションで、「`You are a sales coaching assistant for Contoso Coffee. You help sellers with product pitches, objection handling, competitive comparisons, and pricing guidance. Answer questions about commercial espresso machines, coffee makers, equipment leases, and service contracts. Be concise, friendly, and specific. Always tailor your advice to the customer's industry or location count if that information is provided.`」と入力します。
+1. **[指示]** セクションで **[編集]** を選択し、エージェント用に次の指示を入力します: `You are a sales coaching assistant for Contoso Coffee. You help sellers with product pitches, objection handling, competitive comparisons, and pricing guidance. Answer questions about commercial espresso machines, coffee makers, equipment leases, and service contracts. Be concise, friendly, and specific. Always tailor your advice to the customer's industry or location count if that information is provided.`
 
 1. **[保存]** を選択します。
 
@@ -133,11 +138,11 @@ Marcus は毎週、次のような販売者からの同じ質問に答えます�
 
 1. **[+ トピックの追加]** > **[空白から]** を選択します。
 
-1. トピックに「`Espresso machine lease pitch`」という名前を付けます。
+1. トピックに `Espresso machine lease pitch` という名前を入力します。
 
-1. **[このトピックで行う内容の記述]** フィールドに、「`Use this topic when a seller asks for help pitching an equipment lease, asks for espresso machine talking points, or wants to know what to say when discussing leasing options with a customer.`」と入力します。
+1. **[このトピックで行う内容の記述]** フィールドに、`Use this topic when a seller asks for help pitching an equipment lease, asks for espresso machine talking points, or wants to know what to say when discussing leasing options with a customer.` と入力します。
 
-1. **[+]** を選択し、**[メッセージの送信]** を選びます。 会話デザイナーに表示される **[メッセージ]** ノードで、次のように入力します。
+1. [トリガー] ノードの下にある **[+]** アイコンを選択し、**[メッセージの送信]** を選択します。 会話デザイナーに表示される **[メッセージ]** ノードで、次のように入力します。
 
     ```
     Here's Contoso Coffee's standard equipment lease pitch:
@@ -153,7 +158,7 @@ Marcus は毎週、次のような販売者からの同じ質問に答えます�
 
 1. **[保存]** を選択します。
 
-1. **[戻る]** を選択して、トピックのリストに戻ります。
+1. **[戻る]** を選択して、トリガーの一覧に戻ります。
 
 1. トピックをもう 1 つ追加します。 **[+ トピックの追加]** > **[空白から]** を選択します。
 
@@ -161,7 +166,7 @@ Marcus は毎週、次のような販売者からの同じ質問に答えます�
 
 1. **[このトピックで行う内容の記述]** フィールドに、「`Use this topic when a seller asks how to respond to a pricing objection, price pushback, or a customer who says the product is too expensive.`」と入力します。
 
-1. メッセージ ノードで、次のように入力します。
+1. [トリガー] ノードの下にある **[+]** アイコンを選択し、**[メッセージの送信]** を選択します。 **[メッセージ]** ノードに、次のように入力します。
 
     ```
     When a prospect pushes back on price, try this:
@@ -176,7 +181,7 @@ Marcus は毎週、次のような販売者からの同じ質問に答えます�
 
 1. **[保存]** を選択します。
 
-1. テスト パネルで、「`how do I pitch a lease`」と入力し、定義したエスプレッソ マシンのリース ピッチでエージェントが応答することを確認します。
+1. テスト ペインに、`how do I pitch a lease` と入力し、定義したエスプレッソ マシンのリース ピッチでエージェントが応答することを確認します。
 
 1. 「`they said it's too expensive`」と入力し、価格の異議応答が表示されることを確認します。
 
@@ -188,7 +193,8 @@ Marcus は毎週、次のような販売者からの同じ質問に答えます�
 
 1. **[認証なし]** を選んでから、**[保存]** を選択し、もう一度 **[保存]** を選択します。
 
-   > **注**: この設定を使用すると、デモ Web サイト チャネルは、エンドユーザーのサインインを必要とせずに試用版環境で動作できます。 運用環境のデプロイでは、適切な認証プロバイダーを構成します。
+   > [!NOTE]
+   > この設定を使用すると、デモ Web サイト チャネルは、エンドユーザーのサインインを必要とせずに試用版環境で動作できます。 運用環境のデプロイでは、適切な認証プロバイダーを構成します。
 
 1. [設定] パネルを閉じ、上部のナビゲーション バーで **[発行]** を選択します。
 
@@ -196,7 +202,8 @@ Marcus は毎週、次のような販売者からの同じ質問に答えます�
 
 1. 発行の確認メッセージが表示されるまで待ちます。
 
-    > **注**: Dynamics 365 Sales の営業ハブ サイドバーにカスタム Copilot Studio エージェントを直接埋め込むには、このラボの範囲外の環境レベルの管理者構成が必要です。 
+   > [!NOTE]
+   > Dynamics 365 の [営業ハブ] サイド バーにカスタム Copilot Studio エージェントを直接埋め込むには、このラボの範囲外の環境レベルの管理者構成が必要です。
 
 **お疲れさまでした。** Contoso Coffee の 9 つの要件をすべて完了しました。 空の Dynamics 365 環境から、次のことを行いました。
 
